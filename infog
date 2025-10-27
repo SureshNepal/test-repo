@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDSP Data Publisher Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .flow-step {
+            position: relative;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 2px solid #0047AB;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+        }
+        .flow-arrow {
+            font-size: 3rem;
+            line-height: 1;
+            color: #0047AB;
+            transform: rotate(90deg);
+        }
+        @media (min-width: 768px) {
+            .flow-arrow {
+                transform: rotate(0deg);
+                margin: 0 1rem;
+            }
+        }
+    </style>
+    
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-900">
+
+    <header class="bg-[#0047AB] text-white py-12 px-6 text-center shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">BDSP User Training</h1>
+        <p class="text-xl md:text-2xl font-light">Guide for Data Publishers</p>
+        <p class="text-lg font-light mt-2">data.gov.bt | 29th October 2025</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <section id="roles" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-[#0047AB] mb-4">Who's Who: Platform User Roles</h2>
+            <p class="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+                The BDSP platform defines three distinct roles, each with specific permissions. As a Data Publisher, you will primarily act as the "Data Focal."
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#0047AB]">
+                    <span class="text-4xl">👤</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-2">Data Focal</h3>
+                    <p class="text-gray-700">This is the primary data publisher. Your main responsibility is to create, manage, and publish datasets and their corresponding resources.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#FFC300]">
+                    <span class="text-4xl">🛠️</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-2">Agency Admin</h3>
+                    <p class="text-gray-700">The administrator for your specific agency. This user manages all member accounts and has the authority to add, edit, and delete entire datasets.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#FF5733]">
+                    <span class="text-4xl">👀</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-2">Member</h3>
+                    <p class="text-gray-700">A general user within your organization. Members have view-only access to the common and private datasets shared within your organization.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-300 my-12">
+
+        <section id="workflow" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-[#0047AB] mb-4">The 2-Step Publishing Workflow</h2>
+            <p class="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+                Publishing data is a two-part process. First, you create the "Dataset," which acts as a container. Then, you add "Resources," which are the actual data files.
+            </p>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 my-8">
+                <div class="flow-step">
+                    <span class="text-sm font-semibold text-gray-500">STEP 1</span>
+                    <h3 class="text-2xl font-bold my-2">Create Dataset</h3>
+                    <p class="text-gray-600">(The "Collection" or "Package")</p>
+                </div>
+                
+                <div class="flow-arrow">➔</div>
+                
+                <div class="flow-step">
+                    <span class="text-sm font-semibold text-gray-500">STEP 2</span>
+                    <h3 class="text-2xl font-bold my-2">Add Resources</h3>
+                    <p class="text-gray-600">(The "Actual Data" Files)</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-[#0047AB]">Dataset Metadata Fields</h3>
+                    <p class="text-gray-700 mb-4">The Dataset holds the "who, what, and why" of your data.</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Title:</strong> A clear, descriptive title.</li>
+                        <li><strong>URL:</strong> A unique, auto-generated URL.</li>
+                        <li><strong>Description:</strong> Provide detailed information about the content and purpose of the dataset. Markdown formatting is supported.</li>
+                        <li><strong>Keywords:</strong> Add relevant keywords or tags separated by commas (e.g., health, economy).</li>
+                        <li><strong>Data Focal (Organization):</strong> Select the organization responsible for managing this dataset.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-[#0047AB]">Resource Metadata Fields</h3>
+                    <p class="text-gray-700 mb-4">Each Resource describes a specific data file.</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Name:</strong> Descriptive name (e.g., "Jan 2021 Report").</li>
+                        <li><strong>Description:</strong> Additional details (Markdown supported).</li>
+                        <li><strong>Format:</strong> The file type (e.g., CSV, JSON, XLSX).</li>
+                        <li class="font-bold mt-2">Two Ways to Add Data:</li>
+                        <ul class="list-decimal list-inside ml-4">
+                            <li><strong>Upload:</strong> From your computer.</li>
+                            <li><strong>Link:</strong> From an external URL.</li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 mt-8">
+                <h3 class="text-2xl font-bold text-center mb-4">Resource Input Methods</h3>
+                <p class="text-lg text-center text-gray-700 max-w-2xl mx-auto mb-6">
+                    You have two options for adding your data resource: uploading a static file or linking to an external, live file.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center gap-6 mt-6">
+                    
+                    <div class="p-6 bg-[#FFC300]/10 border-b-4 border-[#FFC300] rounded-lg w-full md:w-1/2 text-center shadow-lg">
+                        <span class="text-6xl mb-3 block">⬆️</span>
+                        <h4 class="text-xl font-bold text-[#0047AB]">Upload File</h4>
+                        <p class="text-gray-600">From your computer.</p>
+                    </div>
+                    
+                    <div class="p-6 bg-[#FF5733]/10 border-b-4 border-[#FF5733] rounded-lg w-full md:w-1/2 text-center shadow-lg">
+                        <span class="text-6xl mb-3 block">🔗</span>
+                        <h4 class="text-xl font-bold text-[#0047AB]">Link to URL</h4>
+                        <p class="text-gray-600">From an external URL.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-300 my-12">
+
+        <section id="quality" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-[#0047AB] mb-4">Ensuring Data Quality & Security</h2>
+            <p class="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+                High-quality data is trustworthy data. Use schema constraints to enforce rules and masking to protect sensitive information.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-center mb-4">Data Validation Constraints</h3>
+                    <p class="text-gray-700 text-center mb-6">
+                        Constraints are validation rules applied to data columns to ensure quality and consistency. The chart below shows the main types available.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="p-3 bg-gray-50 rounded-lg border-l-4 border-[#0047AB]">
+                            <h4 class="font-bold text-[#0047AB]">Required</h4>
+                            <p class="text-sm text-gray-600">Field must contain a value.</p>
+                        </div>
+                        <div class="p-3 bg-gray-50 rounded-lg border-l-4 border-[#FFC300]">
+                            <h4 class="font-bold text-[#0047AB]">Unique</h4>
+                            <p class="text-sm text-gray-600">All values must be distinct.</p>
+                        </div>
+                        <div class="p-3 bg-gray-50 rounded-lg border-l-4 border-[#FF5733]">
+                            <h4 class="font-bold text-[#0047AB]">Minimum / Maximum</h4>
+                            <p class="text-sm text-gray-600">Numeric range limits.</p>
+                        </div>
+                        <div class="p-3 bg-gray-50 rounded-lg border-l-4 border-[#C70039]">
+                            <h4 class="font-bold text-[#0047AB]">minLength / maxLength</h4>
+                            <p class="text-sm text-gray-600">String length limits.</p>
+                        </div>
+                        <div class="p-3 bg-gray-50 rounded-lg border-l-4 border-[#0047AB]">
+                            <h4 class="font-bold text-[#0047AB]">Enum (Predefined List)</h4>
+                            <p class="text-sm text-gray-600">Restrict values to a predefined list.</p>
+                        </div>
+                        <div class="p-3 bg-gray-50 rounded-lg border-l-4 border-[#FFC300]">
+                            <h4 class="font-bold text-[#0047AB]">Pattern (Regex)</h4>
+                            <p class="text-sm text-gray-600">Values must match a regex pattern.</p>
+                        </div>
+                        <div class="p-3 bg-gray-50 rounded-lg border-l-4 border-[#FF5733] col-span-2">
+                            <h4 class="font-bold text-[#0047AB]">Mask (Sensitive Fields)</h4>
+                            <p class="text-sm text-gray-600">Checkbox used to hide masked values.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#C70039]">
+                    <span class="text-4xl">🔒</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-3">What is Data Masking?</h3>
+                    <p class="text-gray-700 text-lg mb-4">
+                        Masking is a critical security feature.
+                    </p>
+                    <p class="text-gray-700">
+                        When you check the "Mask" box for a specific data column (a schema field), its values will be hidden from view in the platform.
+                    </p>
+                    <p class="text-gray-700 mt-2">
+                        This is essential for protecting sensitive or personally identifiable information (PII) while still acknowledging that the data field exists.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-300 my-12">
+
+        <section id="management" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-[#0047AB] mb-4">Managing Your Published Dataset</h2>
+            <p class="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+                Once your dataset is live, you can manage conversations with users via Discussions and follow best practices to keep your data relevant and clean.
+            </p>
+
+            <h3 class="text-2xl font-bold text-center mb-6">Managing Discussions</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-bold mb-3">Access Rules</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Only <strong>logged-in users</strong> can view, create, or comment on discussions.</li>
+                        <li><strong>Anonymous users</strong> will not see the Discussions tab or its contents.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-bold mb-3">Data Focal Privileges</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Delete Discussion:</strong> You can remove any discussion thread entirely.</li>
+                        <li><strong>Close Discussion:</strong> You can close any open discussion, even if you did not create it.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pb-8">
+                <a href="https://staging-admin.data.gov.bt" target="_blank" rel="noopener noreferrer">
+                    <button class="mx-auto block bg-blue-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-600 transition-colors">
+                        Walkthrough
+                    </button>
+                </a>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-center mb-6">Data Focal Best Practices Checklist</h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-4xl mx-auto text-lg">
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span>Use <strong>clear, descriptive titles</strong> for datasets.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span>Provide <strong>detailed descriptions</strong> using Markdown.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span>Include <strong>relevant keywords</strong> and tags.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span>Select appropriate <strong>categories and licenses</strong>.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span>Use <strong>consistent file formats</strong> (e.g., CSV for tabular data).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span>Define schema fields with clear <strong>titles and types</strong>.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span>Apply <strong>constraints</strong> (required, unique, etc.).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span>Use <strong>masking</strong> for sensitive fields.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span>Use clear <strong>version identifiers</strong> (e.g., v1.0, v2.0).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span>Update version notes with <strong>meaningful change logs</strong>.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span>Use <strong>discussions</strong> to clarify dataset issues.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-3 text-2xl">✅</span>
+                        <span><strong>Close resolved discussions</strong> to maintain clarity.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white text-center py-8 mt-12">
+        <p class="text-lg">Thank You</p>
+        <p class="text-lg font-bold">༄ འབྲུག་གཞུང་འཕྲུལ་རིག་ལས་སྡེ། | GovTech Bhutan</p>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        });
+    </script>
+</body>
+</html>
