@@ -3,238 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhutan Genomics Hub Strategy</title>
+    <title>Bhutan Genomics and Wellness Hub Strategy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bhutan-orange: #ff4e00;
-            --bhutan-yellow: #ffcd00;
-            --deep-blue: #0f172a;
-        }
-
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f1f5f9;
+            background-color: #f8fafc;
             color: #1e293b;
-            scroll-behavior: smooth;
         }
 
         .hero-gradient {
-            background: linear-gradient(135deg, var(--bhutan-orange) 0%, var(--bhutan-yellow) 100%);
+            background: linear-gradient(135deg, #ff4e00 0%, #ffcd00 100%);
         }
 
-        .card {
+        .glass-card {
             background: white;
-            border-radius: 24px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            border-radius: 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .icon-box {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+        .icon-container {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #fef3c7;
-            color: var(--bhutan-orange);
+            margin-bottom: 24px;
         }
 
         .section-tag {
-            background: #ffedd5;
-            color: #9a3412;
-            padding: 4px 12px;
+            background: white;
+            color: #1e293b;
+            padding: 8px 24px;
             border-radius: 99px;
-            font-size: 0.75rem;
+            font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .bullet-point {
             position: relative;
-            padding-left: 28px;
+            padding-left: 32px;
+            margin-bottom: 16px;
+            font-size: 20px;
+            line-height: 1.6;
         }
 
         .bullet-point::before {
-            content: '•';
+            content: '';
             position: absolute;
             left: 0;
-            color: var(--bhutan-orange);
-            font-size: 1.5rem;
-            line-height: 1;
+            top: 12px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ff4e00;
+        }
+
+        .main-output-card {
+            border-left: 8px solid #ff4e00;
+        }
+
+        .hub-output-card {
+            border-left: 8px solid #ffcd00;
+        }
+
+        .title-accent-orange {
+            border-left: 6px solid #ff4e00;
+            padding-left: 16px;
+        }
+
+        .title-accent-yellow {
+            border-left: 6px solid #ffcd00;
+            padding-left: 16px;
+        }
+
+        .image-overlay {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .image-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.4));
         }
     </style>
 </head>
-<body class="pb-20">
+<body class="pb-24">
 
-    <!-- Header / Goal Section -->
-    <header class="hero-gradient text-white pt-20 pb-32 px-6 rounded-b-[40px] shadow-2xl relative overflow-hidden">
-        <div class="absolute top-0 right-0 p-8 opacity-20">
-            <i class="fas fa-dna text-[200px] rotate-12"></i>
-        </div>
-        <div class="max-w-4xl mx-auto text-center relative z-10">
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white text-center pt-24 pb-48 px-6 relative">
+        <div class="max-w-5xl mx-auto">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Flag_of_Bhutan.svg/1200px-Flag_of_Bhutan.svg.png" 
-                 class="h-12 mx-auto mb-6 rounded shadow-md" alt="Flag">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">The Vision</h1>
-            <p class="text-xl md:text-2xl font-semibold opacity-90 leading-relaxed italic">
+                 class="h-16 mx-auto mb-8 rounded shadow-lg" alt="Flag of Bhutan">
+            
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 tracking-tight">The Vision</h1>
+            
+            <p class="text-2xl md:text-4xl font-medium leading-tight max-w-4xl mx-auto italic opacity-95">
                 "Bhutan achieves sustainability for its health sector and is established as a commercially successful regional genomics and wellness hub."
             </p>
         </div>
+
+        <!-- Section Transition Info -->
+        <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 z-10">
+            <span class="section-tag">Key Targets</span>
+        </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 -mt-16 relative z-20">
+    <!-- Strategic Outcomes Section -->
+    <main class="max-w-7xl mx-auto px-6 -mt-24 relative z-20">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-[#0f172a]">Strategic Outcomes</h2>
         
-        <!-- Outcomes -->
-        <section class="mb-16">
-            <div class="text-center mb-10">
-                <span class="section-tag">Key Targets</span>
-                <h2 class="text-3xl font-bold mt-2">Strategic Outcomes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+            <!-- Outcome 1 -->
+            <div class="glass-card p-10 text-center flex flex-col items-center">
+                <div class="icon-container bg-orange-100 text-[#ff4e00]">
+                    <i class="fas fa-hand-holding-dollar text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold mb-4">Financial Independence</h3>
+                <p class="text-gray-500 text-lg">Financial Independence of the Biobank Infrastructure</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="card p-8 text-center">
-                    <div class="icon-box mx-auto mb-4 bg-orange-100"><i class="fas fa-hand-holding-dollar text-xl"></i></div>
-                    <h3 class="font-bold mb-2">Financial Independence</h3>
-                    <p class="text-gray-600 text-sm">Self-sustaining biobank infrastructure and operations.</p>
-                </div>
-                <div class="card p-8 text-center">
-                    <div class="icon-box mx-auto mb-4 bg-blue-100 text-blue-600"><i class="fas fa-cash-register text-xl"></i></div>
-                    <h3 class="font-bold mb-2">Revenue Operations</h3>
-                    <p class="text-gray-600 text-sm">Active commercial use cases for data and wellness.</p>
-                </div>
-                <div class="card p-8 text-center">
-                    <div class="icon-box mx-auto mb-4 bg-yellow-100 text-yellow-700"><i class="fas fa-globe-asia text-xl"></i></div>
-                    <h3 class="font-bold mb-2">Regional Leadership</h3>
-                    <p class="text-gray-600 text-sm">Bhutan as a premium hub for genomics & wellness.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Outputs & Activities Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Outcome 2 -->
+            <div class="glass-card p-10 text-center flex flex-col items-center">
+                <div class="icon-container bg-blue-100 text-blue-600">
+                    <i class="fas fa-chart-line text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold mb-4">Revenue Operations</h3>
+                <p class="text-gray-500 text-lg">Operationalized Revenue Models for Biobank Use Cases</p>
+            </div>
+
+            <!-- Outcome 3 -->
+            <div class="glass-card p-10 text-center flex flex-col items-center">
+                <div class="icon-container bg-yellow-100 text-yellow-700">
+                    <i class="fas fa-globe-asia text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold mb-4">Regional Genomics Hub</h3>
+                <p class="text-gray-500 text-lg">Establishment of Bhutan as a Regional Genomics Hub</p>
+            </div>
+        </div>
+
+        <!-- Detailed Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
-            <!-- Financial Section -->
-            <div class="space-y-8">
-                <div class="flex items-center gap-4 mb-2">
-                    <div class="h-10 w-2 bg-orange-500 rounded-full"></div>
-                    <h2 class="text-2xl font-bold">Sustainability & Finance</h2>
-                </div>
+            <!-- Left Column: Finance -->
+            <div class="space-y-12">
+                <h2 class="text-4xl font-extrabold title-accent-orange">Sustainability & Finance</h2>
                 
-                <div class="card p-6 border-l-8 border-orange-500">
-                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
-                        <i class="fas fa-map text-orange-500"></i> Main Output
+                <div class="glass-card p-10 main-output-card">
+                    <h3 class="text-2xl font-extrabold mb-6 flex items-center gap-4">
+                        <i class="fas fa-map text-orange-600"></i> Main Output
                     </h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="bullet-point"><strong>Financial Roadmap:</strong> Guidebook for fee collection and budget saving.</li>
-                    </ul>
-                </div>
-
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
-                        <i class="fas fa-tasks text-blue-500"></i> Key Activities
-                    </h3>
-                    <ul class="space-y-4 text-gray-700">
-                        <li class="bullet-point"><strong>Unit-Costing Framework:</strong> Determining precise service fees for all offerings.</li>
-                        <li class="bullet-point"><strong>Digital Billing Hub:</strong> Automated invoicing and custom dataset sharing system.</li>
-                    </ul>
-                    <img src="https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&q=80&w=500" 
-                         class="mt-6 rounded-xl w-full h-40 object-cover shadow-inner" alt="Data Analytics">
-                </div>
-            </div>
-
-            <!-- Hub & Accreditation Section -->
-            <div class="space-y-8">
-                <div class="flex items-center gap-4 mb-2">
-                    <div class="h-10 w-2 bg-yellow-500 rounded-full"></div>
-                    <h2 class="text-2xl font-bold">The Regional Hub</h2>
-                </div>
-
-                <div class="card p-6 border-l-8 border-yellow-500">
-                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
-                        <i class="fas fa-microscope text-yellow-600"></i> Main Outputs
-                    </h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="bullet-point"><strong>ISO 20387 Seal:</strong> Global accreditation for scientific excellence.</li>
-                        <li class="bullet-point"><strong>Investor Portal:</strong> Secure dashboard for donor and partner monitoring.</li>
-                    </ul>
-                </div>
-
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
-                        <i class="fas fa-rocket text-purple-500"></i> Key Activities
-                    </h3>
-                    <ul class="space-y-4 text-gray-700">
-                        <li class="bullet-point"><strong>Staff Certification:</strong> National program to align with international standards.</li>
-                        <li class="bullet-point"><strong>Wellness Branding:</strong> Marketing Bhutan as a premier wellness destination.</li>
-                        <li class="bullet-point"><strong>Portal Launch:</strong> Real-time display of sample security and uptime.</li>
-                    </ul>
-                    <div class="grid grid-cols-2 gap-4 mt-6">
-                        <div class="bg-gray-100 p-3 rounded-lg flex flex-col items-center">
-                            <i class="fas fa-shield-alt text-green-600 text-xl mb-1"></i>
-                            <span class="text-[10px] font-bold uppercase">Certified</span>
-                        </div>
-                        <div class="bg-gray-100 p-3 rounded-lg flex flex-col items-center">
-                            <i class="fas fa-mountain text-blue-600 text-xl mb-1"></i>
-                            <span class="text-[10px] font-bold uppercase">Destination</span>
-                        </div>
+                    <div class="bullet-point">
+                        <strong>A Financial Sustainability Roadmap:</strong> A detailed guidebook that explains exactly how the biobank will charge fees, manage its budget, and save money for future requirements.
                     </div>
                 </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-extrabold text-gray-800">Activities for Financial Independence</h3>
+                    <div class="image-overlay mb-6">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" alt="Finance" class="w-full h-64 object-cover">
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="bullet-point">Develop a comprehensive Unit-Costing Framework to determine service fees</li>
+                        <li class="bullet-point"><strong>A Digital Data & Billing Hub:</strong> A streamlined system connected to the lab and the Digital Health Platform (DHP) that allows you to share custom-curated datasets based on client needs, while automatically handling invoices and payment tracking.</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Revenue Models Section (Full Width) -->
-            <div class="lg:col-span-2">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="h-10 w-2 bg-green-500 rounded-full"></div>
-                    <h2 class="text-2xl font-bold">Revenue & Wellness Models</h2>
+            <!-- Right Column: Regional Hub -->
+            <div class="space-y-12">
+                <h2 class="text-4xl font-extrabold title-accent-yellow">The Regional Hub</h2>
+
+                <div class="glass-card p-10 hub-output-card">
+                    <h3 class="text-2xl font-extrabold mb-6 flex items-center gap-4">
+                        <i class="fas fa-award text-yellow-600"></i> Main Outputs
+                    </h3>
+                    <ul class="space-y-6">
+                        <li class="bullet-point">
+                            <strong>International Lab Accreditation (ISO):</strong> Getting an official "Seal of Quality" (like ISO 20387) that proves our biobank meets the highest global scientific standards.
+                        </li>
+                        <li class="bullet-point">
+                            <strong>An Investor Information Portal:</strong> A secure website or dashboard where international donors and private companies can see that Bhutan is a safe, high-quality place to invest their money.
+                        </li>
+                    </ul>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="card p-8 bg-slate-900 text-white">
-                        <h3 class="text-xl font-bold mb-6 text-yellow-400">Operational Outputs</h3>
-                        <ul class="space-y-6">
-                            <li class="flex items-start gap-4">
-                                <div class="bg-slate-800 p-3 rounded-lg"><i class="fas fa-briefcase"></i></div>
-                                <div>
-                                    <p class="font-bold">Service Catalog</p>
-                                    <p class="text-sm text-gray-400">Market-aligned offerings with data royalty protection.</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="bg-slate-800 p-3 rounded-lg"><i class="fas fa-spa"></i></div>
-                                <div>
-                                    <p class="font-bold">Wellness Bundles</p>
-                                    <p class="text-sm text-gray-400">Custom packages designed for regional tourism growth.</p>
-                                </div>
-                            </li>
+
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-extrabold text-gray-800">Activities for the Regional Hub</h3>
+                    <div class="image-overlay mb-6">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Lab" class="w-full h-64 object-cover">
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="bullet-point">Conduct a comprehensive ISO 20387 Gap Analysis and implement a National Staff Certification Program to align laboratory operations, quality control, and data security with international biobanking standards.</li>
+                        <li class="bullet-point">Brand Bhutan as a wellness tourism destination.</li>
+                        <li class="bullet-point"><strong>Portal Development:</strong> Build a secure, professional Investor Dashboard that displays real-time stats (e.g., number of samples, security uptime) to show donors that the facility is world-class.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Full Width Section: Revenue Models -->
+            <div class="lg:col-span-2 mt-12 space-y-12">
+                <h2 class="text-4xl font-extrabold title-accent-orange">Revenue Models & Commercialization</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="glass-card p-10">
+                        <h3 class="text-2xl font-extrabold mb-6 text-orange-600">Strategic Output</h3>
+                        <p class="text-xl leading-relaxed">Revenue models for biobank use cases (Bhutan Gene Bank, Traditional Medicine, Wellness Center) are fully operationalized.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-extrabold text-gray-800">Activities for Revenue Models</h3>
+                        <ul class="space-y-4">
+                            <li class="bullet-point">Develop a market-aligned Service Catalog supported by specialized Material Transfer Agreements (MTAs) and develop International Investment Roadmap to secure B2B partnerships and protect Bhutan’s data royalty rights.</li>
+                            <li class="bullet-point">Design and pilot wellness bundles for regional tourists.</li>
+                            <li class="bullet-point"><strong>Demonstration Research Support:</strong> Funding and supporting research processes from hypothesis verification to clinical research, often involving CROs and joint research courses.</li>
                         </ul>
                     </div>
-                    <div class="card p-8 border border-green-100">
-                        <h3 class="text-xl font-bold mb-6 text-green-700">Hub Development Activities</h3>
-                        <div class="space-y-4">
-                            <div class="p-4 bg-green-50 rounded-xl">
-                                <p class="font-bold">Demonstration Research Support</p>
-                                <p class="text-sm">Funding support from hypothesis to clinical trials with CROs.</p>
-                            </div>
-                            <div class="p-4 bg-blue-50 rounded-xl">
-                                <p class="font-bold">International Roadmap</p>
-                                <p class="text-sm">Securing B2B partnerships and protecting Bhutan’s data rights.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-
         </div>
     </main>
 
-    <footer class="mt-20 py-10 border-t border-gray-200 text-center text-gray-500 text-sm">
-        <p>© 2024 Royal Government of Bhutan • Health Sector Sustainability Initiative</p>
+    <footer class="mt-24 py-12 border-t border-gray-200 text-center">
+        <p class="text-gray-400 font-semibold tracking-widest uppercase text-sm">© Royal Government of Bhutan • Genomics & Wellness Hub Strategy</p>
     </footer>
 
 </body>
