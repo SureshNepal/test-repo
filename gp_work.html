@@ -1,1 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhutan Genomics & Wellness Hub Strategy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bhutan-orange: #ff4e00;
+            --bhutan-yellow: #ffcd00;
+            --deep-blue: #1a2a6c;
+            --bg-color: #f8fafc;
+        }
 
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+        }
+
+        #viewport {
+            width: 100vw;
+            height: 100vh;
+            perspective: 1000px;
+            overflow: hidden;
+            cursor: grab;
+        }
+
+        #world {
+            position: absolute;
+            width: 5000px;
+            height: 5000px;
+            transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transform-style: preserve-3d;
+        }
+
+        .step {
+            position: absolute;
+            width: 800px;
+            padding: 40px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-top: 8px solid var(--bhutan-orange);
+            transition: opacity 0.8s, transform 0.8s;
+            opacity: 0.3;
+        }
+
+        .step.active {
+            opacity: 1;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+        }
+
+        .step h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--bhutan-orange), var(--bhutan-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            background: var(--deep-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background: var(--bhutan-orange);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: var(--bhutan-orange);
+            z-index: 1001;
+            transition: width 0.3s;
+        }
+
+        .sub-card {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--bhutan-yellow);
+        }
+
+        .icon-circle {
+            width: 40px;
+            height: 40px;
+            background: var(--bhutan-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        /* Decorative Background */
+        .bg-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .hero-title {
+            text-align: center;
+            width: 1000px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div id="viewport">
+        <div id="world">
+            <div class="bg-pattern"></div>
+
+            <!-- STEP 1: GOAL -->
+            <div class="step hero-title" id="step0" data-x="2500" data-y="2500" data-scale="3">
+                <div class="flex justify-center mb-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Flag_of_Bhutan.svg/1200px-Flag_of_Bhutan.svg.png" class="h-20 rounded shadow-lg" alt="Bhutan Flag">
+                </div>
+                <h2 class="text-6xl">The Vision</h2>
+                <p class="text-3xl text-gray-700 italic text-center">
+                    "Bhutan achieves sustainability for its health sector and is established as a commercially successful regional genomics and wellness hub."
+                </p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full font-bold">Sustainability</span>
+                    <span class="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full font-bold">Innovation</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-bold">Wellness</span>
+                </div>
+            </div>
+
+            <!-- STEP 2: OUTCOMES -->
+            <div class="step" id="step1" data-x="1200" data-y="1800" data-scale="1.5" data-rotate="10">
+                <h2>Strategic Outcomes</h2>
+                <div class="space-y-4">
+                    <div class="sub-card flex items-start gap-4">
+                        <div class="icon-circle"><i class="fas fa-coins text-white"></i></div>
+                        <div>
+                            <h4 class="font-bold">Financial Independence</h4>
+                            <p class="text-sm text-gray-600">Self-sustaining Biobank infrastructure.</p>
+                        </div>
+                    </div>
+                    <div class="sub-card flex items-start gap-4">
+                        <div class="icon-circle"><i class="fas fa-chart-line text-white"></i></div>
+                        <div>
+                            <h4 class="font-bold">Revenue Operations</h4>
+                            <p class="text-sm text-gray-600">Active models for Gene Banks & Wellness.</p>
+                        </div>
+                    </div>
+                    <div class="sub-card flex items-start gap-4">
+                        <div class="icon-circle"><i class="fas fa-globe-asia text-white"></i></div>
+                        <div>
+                            <h4 class="font-bold">Regional Genomics Hub</h4>
+                            <p class="text-sm text-gray-600">Positioning Bhutan as a global scientific leader.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: OUTPUTS 1 -->
+            <div class="step" id="step2" data-x="3800" data-y="1800" data-scale="1.2" data-rotate="-5">
+                <h2 class="text-2xl">Output: Financial Roadmaps</h2>
+                <div class="border-l-4 border-orange-500 pl-4 py-2 bg-orange-50 rounded-r">
+                    <h3 class="font-bold text-orange-800">Sustainability Roadmap</h3>
+                    <p class="text-gray-700">A detailed guidebook for fee structures, budget management, and future capital savings.</p>
+                </div>
+                <div class="mt-6">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=400" class="rounded-xl opacity-80" alt="Finance">
+                </div>
+            </div>
+
+            <!-- STEP 4: OUTPUTS 2 -->
+            <div class="step" id="step3" data-x="4200" data-y="3200" data-scale="1.2" data-rotate="15">
+                <h2>Output: Operational Revenue</h2>
+                <p class="mb-4 text-gray-600">Revenue models for three core pillars:</p>
+                <div class="grid grid-cols-1 gap-2">
+                    <div class="p-3 bg-blue-50 rounded-lg flex items-center gap-3">
+                        <i class="fas fa-dna text-blue-500"></i>
+                        <span class="font-medium">Bhutan Gene Bank</span>
+                    </div>
+                    <div class="p-3 bg-green-50 rounded-lg flex items-center gap-3">
+                        <i class="fas fa-leaf text-green-500"></i>
+                        <span class="font-medium">Traditional Medicine</span>
+                    </div>
+                    <div class="p-3 bg-purple-50 rounded-lg flex items-center gap-3">
+                        <i class="fas fa-spa text-purple-500"></i>
+                        <span class="font-medium">Wellness Center</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 5: OUTPUTS 3 -->
+            <div class="step" id="step4" data-x="1000" data-y="3500" data-scale="1.5">
+                <h2>Output: The Regional Hub</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fas fa-award text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">ISO 20387 Accreditation</h4>
+                            <p class="text-sm">Official "Seal of Quality" for global scientific standards.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fas fa-desktop text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Investor Portal</h4>
+                            <p class="text-sm">Secure dashboard for donors and private enterprise monitoring.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 6: ACTIVITIES - FINANCE -->
+            <div class="step" id="step5" data-x="2500" data-y="4500" data-scale="1">
+                <h2 class="text-xl">Activities: Financial Independence</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-orange-500 mt-1"></i>
+                        <span>Develop <strong>Unit-Costing Framework</strong> for service fees.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-orange-500 mt-1"></i>
+                        <span>Launch <strong>Digital Data & Billing Hub</strong>: Integrated with DHP for automated invoicing and dataset sharing.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- STEP 7: ACTIVITIES - REVENUE -->
+            <div class="step" id="step6" data-x="5000" data-y="2500" data-scale="0.8" data-rotate="-90">
+                <h2>Activities: Revenue Models</h2>
+                <div class="space-y-4 text-sm">
+                    <div class="p-4 border border-blue-200 rounded-lg">
+                        <h4 class="font-bold text-blue-800 uppercase text-xs mb-2">Service Catalog</h4>
+                        <p>Market-aligned catalogs with MTAs and International Investment Roadmaps for B2B royalties.</p>
+                    </div>
+                    <div class="p-4 border border-green-200 rounded-lg">
+                        <h4 class="font-bold text-green-800 uppercase text-xs mb-2">Wellness Bundles</h4>
+                        <p>Designing and piloting specialized wellness experiences for regional tourists.</p>
+                    </div>
+                    <div class="p-4 border border-purple-200 rounded-lg">
+                        <h4 class="font-bold text-purple-800 uppercase text-xs mb-2">Research Support</h4>
+                        <p>Funding processes from hypothesis to clinical trials with CRO partnerships.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 8: ACTIVITIES - HUB -->
+            <div class="step" id="step7" data-x="0" data-y="2500" data-scale="1.2" data-rotate="45">
+                <h2>Activities: The Regional Hub</h2>
+                <div class="bg-gray-900 text-white p-6 rounded-2xl">
+                    <div class="mb-4">
+                        <span class="text-yellow-400 font-bold">#1 Quality Control</span>
+                        <p class="text-gray-300 text-sm">ISO 20387 Gap Analysis & National Staff Certification.</p>
+                    </div>
+                    <div class="mb-4">
+                        <span class="text-yellow-400 font-bold">#2 Branding</span>
+                        <p class="text-gray-300 text-sm">Market Bhutan as a premier wellness tourism destination.</p>
+                    </div>
+                    <div>
+                        <span class="text-yellow-400 font-bold">#3 Tech Infrastructure</span>
+                        <p class="text-gray-300 text-sm">Real-time stats dashboard showing samples & security uptime.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="controls">
+        <div class="btn" onclick="navigate(-1)"><i class="fas fa-chevron-left"></i></div>
+        <div class="flex items-center text-sm font-bold text-blue-900" id="counter">1 / 8</div>
+        <div class="btn" onclick="navigate(1)"><i class="fas fa-chevron-right"></i></div>
+    </div>
+
+    <script>
+        const world = document.getElementById('world');
+        const steps = document.querySelectorAll('.step');
+        const progressBar = document.getElementById('progressBar');
+        const counter = document.getElementById('counter');
+        
+        let currentStep = 0;
+
+        function updateView() {
+            const step = steps[currentStep];
+            const x = step.getAttribute('data-x') || 0;
+            const y = step.getAttribute('data-y') || 0;
+            const scale = step.getAttribute('data-scale') || 1;
+            const rotate = step.getAttribute('data-rotate') || 0;
+
+            // Prezi logic: Move the world so the item is at 0,0 and scaled up
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            // We translate to the center of the screen
+            const tx = (viewportWidth / 2) - x;
+            const ty = (viewportHeight / 2) - y;
+
+            // Apply transformation
+            // Note: Order matters. Scale first, then rotate, then translate.
+            // But we actually transform the WORLD, not the step.
+            world.style.transformOrigin = `${x}px ${y}px`;
+            world.style.transform = `translate(${tx}px, ${ty}px) scale(${1/scale}) rotate(${-rotate}deg)`;
+
+            // Update active states
+            steps.forEach((s, i) => {
+                s.classList.toggle('active', i === currentStep);
+            });
+
+            // Update UI
+            const progress = ((currentStep + 1) / steps.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            counter.innerText = `${currentStep + 1} / ${steps.length}`;
+        }
+
+        function navigate(dir) {
+            currentStep += dir;
+            if (currentStep < 0) currentStep = 0;
+            if (currentStep >= steps.length) currentStep = steps.length - 1;
+            updateView();
+        }
+
+        // Initialize positions
+        steps.forEach(step => {
+            const x = step.getAttribute('data-x');
+            const y = step.getAttribute('data-y');
+            const rotate = step.getAttribute('data-rotate') || 0;
+            step.style.left = `${x}px`;
+            step.style.top = `${y}px`;
+            step.style.transform = `rotate(${rotate}deg)`;
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') navigate(1);
+            if (e.key === 'ArrowLeft') navigate(-1);
+        });
+
+        // Touch swipe logic
+        let touchstartX = 0;
+        let touchendX = 0;
+        
+        document.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            if (touchstartX - touchendX > 50) navigate(1);
+            if (touchendX - touchstartX > 50) navigate(-1);
+        });
+
+        window.onload = updateView;
+        window.onresize = updateView;
+
+    </script>
+</body>
+</html>
